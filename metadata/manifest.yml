@@ -3,6 +3,7 @@ Cartridge-Short-Name: GATEIN
 Display-Name: GateIn Portal
 Description: "The aim is to provide an intuitive user-friendly portal and a framework to address the needs of today's Web 2.0 applications."
 Version: '3.6'
+Source-Url: https://github.com/lucasponce/openshift-online-cartridge-gatein.git
 License: LGPL
 License-Url: http://www.gnu.org/copyleft/lesser.txt
 Vendor: Red Hat
