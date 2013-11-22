@@ -23,11 +23,11 @@ fi
 
 # Installs postgresql and mysql drivers
 if [[ -d /usr/share/jbossas/modules/org/postgresql ]] ; then
-  mkdir -p /usr/share/gatein-portal/modules/org/postgresql
+  mkdir -p ${OPENSHIFT_GATEIN_DIR}/gatein-portal/modules/org/postgresql
   cp -R /usr/share/jbossas/modules/org/postgresql/jdbc ${OPENSHIFT_GATEIN_DIR}/gatein-portal/modules/org/postgresql
 fi
 if [[ -d /usr/share/jbossas/modules/com/mysql ]] ; then
-  mkdir -p /usr/share/gatein-portal/modules/com/mysql
+  mkdir -p ${OPENSHIFT_GATEIN_DIR}/gatein-portal/modules/com/mysql
   cp -R /usr/share/jbossas/modules/com/mysql/jdbc ${OPENSHIFT_GATEIN_DIR}/gatein-portal/modules/com/mysql
 fi
 
