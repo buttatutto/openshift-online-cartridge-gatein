@@ -6,23 +6,30 @@ case "$1" in
 esac
 
 # Downloads and unzip GateIn Portal if it's not present in broker node
-if [[ ! -d /tmp/gatein-portal ]] ; then
+if [[ ! -d ${OPENSHIFT_GATEIN_DIR}/GateIn-3.6.0.Final-jbossas7 ]] ; then
+  echo "Start GateIn download from jboss.org site..."
   wget -P /tmp http://downloads.jboss.org/gatein/Releases/Portal/3.6.0.Final/GateIn-3.6.0.Final-jbossas7.zip
-  unzip /tmp/GateIn-3.6.0.Final-jbossas7.zip -d /tmp
-  mv /tmp/GateIn-3.6.0.Final-jbossas7 /tmp/gatein-portal
+  echo "Unzip GateIn in cartridge..."
+  unzip /tmp/GateIn-3.6.0.Final-jbossas7.zip -d ${OPENSHIFT_GATEIN_DIR}
+  echo "Installing GateIn..."
+  mv ${OPENSHIFT_GATEIN_DIR}/GateIn-3.6.0.Final-jbossas7 ${OPENSHIFT_GATEIN_DIR}/gatein-portal
 fi
 
 # Checks if gatein-portal is present in node
-if [[ ! -d /tmp/gatein-portal ]] ; then
+if [[ ! -d ${OPENSHIFT_GATEIN_DIR}/gatein-portal ]] ; then
   echo "GateIn Portal not found, GateIn cartridge cannot continue"
   exit 1  
 fi
 
-# Installs gatein-portal on cartridge
-mkdir -p ${OPENSHIFT_GATEIN_DIR}/gatein-portal
-cp -R /tmp/gatein-portal/{appclient,bin,bundles,docs,domain,gatein,standalone,welcome-content} ${OPENSHIFT_GATEIN_DIR}/gatein-portal
-ln -s /tmp/gatein-portal/modules ${OPENSHIFT_GATEIN_DIR}/gatein-portal
-ln -s /tmp/gatein-portal/jboss-modules.jar ${OPENSHIFT_GATEIN_DIR}/gatein-portal
+# Installs postgresql and mysql drivers
+if [[ -d /usr/share/jboss-as/modules/org/postgresql ]] ; then
+  mkdir -p /usr/share/gatein-portal/modules/org/postgresql
+  cp -R /usr/share/jboss-as/modules/org/postgresql/jdbc /usr/share/gatein-portal/modules/org/postgresql
+fi
+if [[ -d /usr/share/jboss-as/modules/com/mysql ]] ; then
+  mkdir -p /usr/share/gatein-portal/modules/com/mysql
+  cp -R /usr/share/jboss-as/modules/com/mysql/jdbc /usr/share/gatein-portal/modules/com/mysql
+fi
 
 # Installs template
 mkdir -p ${OPENSHIFT_GATEIN_DIR}/template/{deployments,extensions}
