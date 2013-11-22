@@ -22,13 +22,13 @@ if [[ ! -d ${OPENSHIFT_GATEIN_DIR}/gatein-portal ]] ; then
 fi
 
 # Installs postgresql and mysql drivers
-if [[ -d /usr/share/jboss-as/modules/org/postgresql ]] ; then
+if [[ -d /usr/share/jbossas/modules/org/postgresql ]] ; then
   mkdir -p /usr/share/gatein-portal/modules/org/postgresql
-  cp -R /usr/share/jboss-as/modules/org/postgresql/jdbc /usr/share/gatein-portal/modules/org/postgresql
+  cp -R /usr/share/jbossas/modules/org/postgresql/jdbc /usr/share/gatein-portal/modules/org/postgresql
 fi
-if [[ -d /usr/share/jboss-as/modules/com/mysql ]] ; then
+if [[ -d /usr/share/jbossas/modules/com/mysql ]] ; then
   mkdir -p /usr/share/gatein-portal/modules/com/mysql
-  cp -R /usr/share/jboss-as/modules/com/mysql/jdbc /usr/share/gatein-portal/modules/com/mysql
+  cp -R /usr/share/jbossas/modules/com/mysql/jdbc /usr/share/gatein-portal/modules/com/mysql
 fi
 
 # Installs template
