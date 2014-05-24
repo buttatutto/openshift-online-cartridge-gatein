@@ -16,7 +16,7 @@ Usage
 
 From GateIn rhc command line tool:
 
-rhc create-app mygatein https://raw.github.com/lucasponce/openshift-online-cartridge-gatein/master/metadata/manifest.yml
+rhc create-app mygatein https://raw.github.com/buttatutto/openshift-online-cartridge-gatein/master/metadata/manifest.yml
 
 Where "mygatein" is your app name in your openshift domain.
 
