@@ -6,13 +6,13 @@ case "$1" in
 esac
 
 # Downloads and unzip GateIn Portal if it's not present in broker node
-if [[ ! -d ${OPENSHIFT_GATEIN_DIR}/GateIn-3.6.0.Final-jbossas7 ]] ; then
+if [[ ! -d ${OPENSHIFT_GATEIN_DIR}/GateIn-3.7.0.Final-jbossas7 ]] ; then
   echo "Start GateIn download from jboss.org site..."
-  wget -P /tmp http://downloads.jboss.org/gatein/Releases/Portal/3.6.0.Final/GateIn-3.6.0.Final-jbossas7.zip
+  wget -P /tmp http://downloads.jboss.org/gatein/Releases/Portal/3.7.0.Final/GateIn-3.7.0.Final-jbossas7.zip
   echo "Unzip GateIn in cartridge..."
-  unzip /tmp/GateIn-3.6.0.Final-jbossas7.zip -d ${OPENSHIFT_GATEIN_DIR}
+  unzip /tmp/GateIn-3.7.0.Final-jbossas7.zip -d ${OPENSHIFT_GATEIN_DIR}
   echo "Installing GateIn..."
-  mv ${OPENSHIFT_GATEIN_DIR}/GateIn-3.6.0.Final-jbossas7 ${OPENSHIFT_GATEIN_DIR}/gatein-portal
+  mv ${OPENSHIFT_GATEIN_DIR}/GateIn-3.7.0.Final-jbossas7 ${OPENSHIFT_GATEIN_DIR}/gatein-portal
 fi
 
 # Checks if gatein-portal is present in node
