@@ -466,7 +466,7 @@
     <socket-binding-group name="standard-sockets" default-interface="public" port-offset="${jboss.socket.binding.port-offset:0}">
         <socket-binding name="management-native" interface="management" port="${env.OPENSHIFT_GATEIN_MANAGEMENT_NATIVE_PORT}"/>
         <socket-binding name="management-http" interface="management" port="${env.OPENSHIFT_GATEIN_MANAGEMENT_HTTP_PORT}"/>
-        <socket-binding name="management-https" interface="management" port="${jboss.management.https.port:9443}"/>
+        <socket-binding name="management-https" interface="management" port="${env.OPENSHIFT_GATEIN_MANAGEMENT_HTTP_PORT}"/>
         <socket-binding name="ajp" port="8009"/>
         <socket-binding name="http" port="${env.OPENSHIFT_GATEIN_HTTP_PORT}"/>
         <socket-binding name="https" port="8443"/>
