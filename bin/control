@@ -23,7 +23,10 @@ function ishttpup() {
       sleep 2
   done
 
-  return 1
+  #return 1
+  #force to continue ...
+  return 0
+  
 }
 
 # Check if the gatein process is running
