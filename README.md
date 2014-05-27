@@ -25,16 +25,16 @@ Adding databases to your GateIn cartridge
 
 Add a mysql cartridge
 
-rhc cartridge add mysql-5.5 --app mygatein
+rhc cartridge add mysql-5.5 --app myg37X
 
-rhc cartridge add phpmyadmin-4 --app mygatein
+rhc cartridge add phpmyadmin-4 --app myg37X
 
-rhc app restart mygatein
+rhc app restart myg37X
 
 or 
 
 add a postgresql-8.4 cartridge
 
-rhc cartridge add postgresql-8.4 --app mygatein
+rhc cartridge add postgresql-8.4 --app myg37X
 
-rhc app restart mygatein
+rhc app restart myg37X
