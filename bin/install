@@ -19,6 +19,9 @@ mv ${OPENSHIFT_GATEIN_DIR}/template/.openshift/config/gatein.ear/web.war.tmp ${O
 cp ${OPENSHIFT_GATEIN_DIR}/template/.openshift/config/gatein.ear.toinstall/GroovyPortlet_en.properties ${OPENSHIFT_GATEIN_DIR}/template/.openshift/config/gatein.ear/web.war/WEB-INF/classes/locale/portlet/web
 cp ${OPENSHIFT_GATEIN_DIR}/template/.openshift/config/gatein.ear.toinstall/{navigation.xml,pages.xml} ${OPENSHIFT_GATEIN_DIR}/template/.openshift/config/gatein.ear/portal.war/WEB-INF/conf/portal/portal/classic
 
+# added by zulio
+cp ${OPENSHIFT_GATEIN_DIR}/template/.openshift/config/gatein.ear.toinstall/repository-configuration.xml  ${OPENSHIFT_GATEIN_DIR}/template/.openshift/config/gatein.ear/portal.war/WEB-INF/conf/jcr
+
 # Prepares ROOT.war
 pushd ${OPENSHIFT_GATEIN_DIR}/template/.openshift/config/gatein.ear.toinstall/ROOT.war 1> /dev/null
   jar cvf ${OPENSHIFT_GATEIN_DIR}/template/deployments/ROOT.war ./*
