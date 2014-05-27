@@ -3,7 +3,7 @@
 source $OPENSHIFT_CARTRIDGE_SDK_BASH
 
 cartridge_type="gatein"
-version=3.6
+version=3.7
 
 GATEIN_HOME=${OPENSHIFT_GATEIN_DIR}/gatein-portal
 GATEIN_PID_FILE=${OPENSHIFT_HOMEDIR}/app-root/runtime/gatein.pid
