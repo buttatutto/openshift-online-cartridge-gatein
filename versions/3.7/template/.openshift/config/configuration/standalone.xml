@@ -449,10 +449,10 @@
     </profile>
     <interfaces>
         <interface name="management">
-            <inet-address value="${env.OPENSHIFT_GATEIN_IP}"/>
+            <loopback-address value="${env.OPENSHIFT_GATEIN_IP}"/>
         </interface>
         <interface name="public">
-            <inet-address value="${env.OPENSHIFT_GATEIN_IP}"/>
+            <loopback-address value="${env.OPENSHIFT_GATEIN_IP}"/>
         </interface>
         <!-- TODO - only show this if the jacorb subsystem is added  -->
         <interface name="unsecure">
@@ -460,10 +460,10 @@
               ~  Used for IIOP sockets in the standard configuration.
               ~                  To secure JacORB you need to setup SSL 
               -->
-            <inet-address value="${env.OPENSHIFT_GATEIN_IP}"/>
+            <loopback-address value="${env.OPENSHIFT_GATEIN_IP}"/>
         </interface>
     </interfaces>
-    <socket-binding-group name="standard-sockets" default-interface="public" port-offset="${jboss.socket.binding.port-offset:0}">
+    <socket-binding-group name="standard-sockets" default-interface="public" port-offset="0">
         <socket-binding name="management-native" interface="management" port="${env.OPENSHIFT_GATEIN_MANAGEMENT_NATIVE_PORT}"/>
         <socket-binding name="management-http" interface="management" port="${env.OPENSHIFT_GATEIN_MANAGEMENT_HTTP_PORT}"/>
         <socket-binding name="management-https" interface="management" port="${env.OPENSHIFT_GATEIN_MANAGEMENT_HTTP_PORT}"/>
