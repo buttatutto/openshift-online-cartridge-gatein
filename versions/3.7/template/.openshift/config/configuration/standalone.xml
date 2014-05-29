@@ -125,7 +125,7 @@
 				<!-- __H2 -->
 
                 <!-- MYSQL__
-                  <datasource jndi-name="java:/jdbcidm_portal" pool-name="IDMPortalDS" enabled="true" use-java-context="true" use-ccm="true">
+                  <datasource jndi-name="java:jboss/datasources/RevwyMySqlDS" pool-name="RevwyMySqlDS" enabled="true" use-java-context="true" use-ccm="true">      
                       <connection-url>jdbc:mysql://${env.OPENSHIFT_MYSQL_DB_HOST}:${env.OPENSHIFT_MYSQL_DB_PORT}/${env.OPENSHIFT_APP_NAME}</connection-url>
                       <driver>mysql</driver>
                       <security>
